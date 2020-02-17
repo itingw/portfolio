@@ -1,0 +1,29 @@
+{
+  "name": "portfolio",
+  "version": "2.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "@fortawesome/fontawesome-free": "^5.12.1",
+    "bootstrap": "^4.4.1",
+    "jquery": "^3.4.1",
+    "popper.js": "^1.16.1"
+  },
+  "devDependencies": {
+    "lite-server": "^2.5.4"
+  },
+  "scripts": {
+    "start": "lite-server",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/itingw/portfolio.git"
+  },
+  "author": "Ting W.",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/itingw/portfolio/issues"
+  },
+  "homepage": "https://github.com/itingw/portfolio#readme"
+}
