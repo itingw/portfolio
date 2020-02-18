@@ -6,9 +6,15 @@ h5 {
   font-family: 'Roboto Mono', monospace;
   color: #141414;
 }
+h6,
 p {
   font-family: 'Montserrat', sans-serif;
   color: #141414;
+}
+mark {
+  background: none !important;
+  color: #F26C65;
+  font-weight: bold;
 }
 ::-webkit-scrollbar {
   width: 8px;
@@ -30,6 +36,9 @@ p {
 .navbar .navbar-logo {
   height: 30px;
 }
+.navbar .navbar-toggler {
+  border: none;
+}
 .navbar .nav-item {
   margin: 0 1em;
 }
@@ -45,4 +54,11 @@ p {
 .jumbotron {
   background-color: white;
   padding: 7rem 0;
+}
+.new-section {
+  margin-top: 20%;
+  margin-bottom: 20%;
+}
+.about-icons {
+  color: #3E3E3E;
 }

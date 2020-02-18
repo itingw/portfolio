@@ -2,6 +2,7 @@
 @teal: #4ECDC4;
 @teal-light: #ADEEE3;
 @gray-dark: #141414;
+@gray: #3E3E3E;
 @red-pastel: #F26C65;
 
 h1, h2, h3, h4, h5 {
@@ -9,9 +10,15 @@ h1, h2, h3, h4, h5 {
   color: @gray-dark;
 }
 
-p {
+h6, p {
   font-family: 'Montserrat', sans-serif;
   color: @gray-dark;
+}
+
+mark {
+  background: none !important;
+  color: @red-pastel;
+  font-weight: bold;
 }
 
 ::-webkit-scrollbar {
@@ -39,6 +46,10 @@ p {
     height: 30px;
   }
 
+  .navbar-toggler {
+    border: none;
+  }
+
   .nav-item {
     margin: 0 1em;
   }
@@ -59,4 +70,13 @@ p {
 .jumbotron {
   background-color: white;
   padding: 7rem 0;
+}
+
+.new-section {
+  margin-top: 20%;
+  margin-bottom: 20%;
+}
+
+.about-icons {
+  color: @gray;
 }
