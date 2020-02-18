@@ -10,27 +10,17 @@
     "popper.js": "^1.16.1"
   },
   "devDependencies": {
-    "cssmin": "^0.4.3",
-    "htmlmin": "0.0.7",
     "lite-server": "^2.5.4",
     "onchange": "^6.1.0",
-    "parallelshell": "^3.0.1",
-    "rimraf": "^2.6.2",
-    "uglifyjs": "^2.4.11",
-    "usemin-cli": "^0.5.1"
+    "parallelshell": "^3.0.1"
   },
   "scripts": {
     "start": "npm run watch:all",
     "test": "echo \"Error: no test specified\" && exit 1",
     "lite": "lite-server",
-    "clean": "rimraf dist",
-    "copyfonts": "copyfiles -f node_modules/@fortawesome/fontawesome-free/webfonts/* dist/fonts",
-    "imagemin": "imagemin img/* -o dist/img",
     "less": "lessc css/styles.less css/styles.css",
     "watch:less": "onchange \"css/*.less\" -- npm run less",
-    "watch:all": "parallelshell \"npm run watch:less\" \"npm run lite\"",
-    "usemin": "usemin index.html -d dist --htmlmin -o dist/index.html",
-    "build": "npm run clean && npm run imagemin && npm run copyfonts && npm run usemin"
+    "watch:all": "parallelshell \"npm run watch:less\" \"npm run lite\""
   },
   "repository": {
     "type": "git",
