@@ -10,11 +10,17 @@
     "popper.js": "^1.16.1"
   },
   "devDependencies": {
-    "lite-server": "^2.5.4"
+    "lite-server": "^2.5.4",
+    "onchange": "^6.1.0",
+    "parallelshell": "^3.0.1"
   },
   "scripts": {
-    "start": "lite-server",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "npm run watch:all",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lite": "lite-server",
+    "less": "lessc css/styles.less css/styles.css",
+    "watch:less": "onchange \"css/*.less\" -- npm run less",
+    "watch:all": "parallelshell \"npm run watch:less\" \"npm run lite\""
   },
   "repository": {
     "type": "git",

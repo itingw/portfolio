@@ -1,0 +1,47 @@
+@teal-dark: #30534D;
+@teal: #4ECDC4;
+@teal-light: #ADEEE3;
+@gray-dark: #141414;
+
+h1, h2, h3, h4, h5 {
+  font-family: 'Roboto Mono', monospace;
+  color: @gray-dark;
+}
+
+p {
+  font-family: 'Montserrat', sans-serif;
+  color: @gray-dark;
+}
+
+.navbar {
+  background-color: @teal-dark;
+  box-shadow: 0 2px 4px -2px rgba(0,0,0,.5);
+
+  .navbar-logo {
+    height: 30px;
+  }
+
+  .nav-item {
+    margin: 0 1em;
+  }
+
+  .nav-link {
+    text-decoration: none;
+    color: @teal !important;
+    font-family: 'Roboto Mono', monospace;
+  }
+
+  .nav-link:hover {
+    color: @teal-light !important;
+    text-decoration: underline;
+  }
+
+}
+
+.jumbotron {
+    background-color: white;
+}
+
+.portrait {
+  width: 400px;
+}

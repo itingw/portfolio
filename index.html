@@ -10,41 +10,48 @@
   <link href="node_modules/@fortawesome/fontawesome-free/css/fontawesome.css" rel="stylesheet">
   <link href="node_modules/@fortawesome/fontawesome-free/css/brands.css" rel="stylesheet">
   <link href="node_modules/@fortawesome/fontawesome-free/css/solid.css" rel="stylesheet">
-  <link rel="stylesheet" href="css/main.css"  type="text/css">
+  <link rel="stylesheet" href="css/styles.css"  type="text/css">
 
   <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Abel" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Roboto+Mono&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Montserrat|Roboto+Mono&display=swap" rel="stylesheet">
 </head>
+
 <body>
-
-  <nav class="navbar nav navbar-expand-sm fixed-top">
-    <div class="collapse navbar-collapse" id="Navbar">
-      <ul class="navbar-nav mr-auto">
-        <li class="nav-item-logo"><img src="img/logo.svg" class="logo" alt="ting's logo"></li>
-        <li class="nav-item"><a href="https://itingw.github.io/portfolio/">About</a></li>
-        <li class="nav-item"><a href="design.html">Experience</a></li>
-        <li class="nav-item"><a href="design.html">Work</a></li>
-        <li class="nav-item"><a href="">Resume</a></li>
-        <li class="nav-item nav-item-icon"><a href=itingwang35@gmail.com><i class="fa fa-envelope fa-lg"></i></a></li>
-        <li class="nav-item nav-item-icon"><a href=https://github.com/itingw><i class="fab fa-github fa-lg" aria-hidden="true"></i></a></li>
-        <li class="nav-item nav-item-icon"><a href=https://www.linkedin.com/in/i-ting-wang-1851a457><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
-        <li class="nav-item nav-item-icon"><a href=http://etsy.com/shop/chickpeayarns><i class="fab fa-etsy fa-lg" aria-hidden="true"></i></a></li>
-      </ul>
-    </div>
-  </nav>
-
-  <div class ="container">
-    <section class ="row">
-      <div class="text-center">
-        <h2> Hi, my name is Ting. </h2>
-        <div class="col-8 offset-2">
-          <img src="img/portrait.png" class="portrait" alt="a portrait of ting">
-        </div>
-        <h1>I am a designer, developer & data nerd</h1>
+  <nav class="navbar navbar-dark navbar-expand-sm fixed-top">
+      <a class="navbar-brand mr-auto" href="#"><img class="navbar-logo" src="img/logo.svg"></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#Navbar">
+          <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="Navbar">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item"><a class="nav-link" href="https://itingw.github.io/portfolio/">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="design.html">Experience</a></li>
+          <li class="nav-item"><a class="nav-link" href="design.html">Work</a></li>
+          <li class="nav-item"><a class="nav-link" href="">Resume</a></li>
+          <li class="nav-item"><a class="nav-link" href="mailto:itingwang35@gmail.com"><i class="fa fa-envelope fa-lg"></i></a></li>
+          <li class="nav-item"><a class="nav-link" href=https://github.com/itingw><i class="fab fa-github fa-lg" aria-hidden="true"></i></a></li>
+          <li class="nav-item"><a class="nav-link" href=https://www.linkedin.com/in/i-ting-wang-1851a457><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+          <li class="nav-item"><a class="nav-link" href=http://etsy.com/shop/chickpeayarns><i class="fab fa-etsy fa-lg" aria-hidden="true"></i></a></li>
+        </ul>
       </div>
-  </div>
+  </nav>
+  <header class="jumbotron">
+    <div class ="container">
+      <section class ="row">
+        <div class="text-center">
+          <h2> Hi, my name is Ting. </h2>
+          <div class="col-8 offset-2">
+            <img src="img/portrait.png" class="portrait" alt="a portrait of ting">
+          </div>
+          <h1>I am a designer, developer & data nerd</h1>
+        </div>
+      </section>
+    </div>
+  </header>
+
+
 
   <script src="node_modules/jquery/dist/jquery.slim.min.js"></script>
   <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
