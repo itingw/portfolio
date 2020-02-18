@@ -10,6 +10,19 @@ p {
   font-family: 'Montserrat', sans-serif;
   color: #141414;
 }
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background: #4ECDC4;
+}
+.highlight-text-red {
+  color: #F26C65;
+}
 .navbar {
   background-color: #30534D;
   box-shadow: 0 2px 4px -2px rgba(0, 0, 0, 0.5);
@@ -31,7 +44,5 @@ p {
 }
 .jumbotron {
   background-color: white;
-}
-.portrait {
-  width: 400px;
+  padding: 7rem 0;
 }

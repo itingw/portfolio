@@ -2,6 +2,7 @@
 @teal: #4ECDC4;
 @teal-light: #ADEEE3;
 @gray-dark: #141414;
+@red-pastel: #F26C65;
 
 h1, h2, h3, h4, h5 {
   font-family: 'Roboto Mono', monospace;
@@ -11,6 +12,23 @@ h1, h2, h3, h4, h5 {
 p {
   font-family: 'Montserrat', sans-serif;
   color: @gray-dark;
+}
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background: @teal;
+}
+
+.highlight-text-red {
+  color: @red-pastel;
 }
 
 .navbar {
@@ -39,9 +57,6 @@ p {
 }
 
 .jumbotron {
-    background-color: white;
-}
-
-.portrait {
-  width: 400px;
+  background-color: white;
+  padding: 7rem 0;
 }
