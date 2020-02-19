@@ -11,6 +11,10 @@ h6 {
   font-weight: bold;
   color: #141414;
 }
+a,
+li {
+  font-family: 'Montserrat', sans-serif;
+}
 p {
   font-family: 'Montserrat', sans-serif;
   color: #141414;
@@ -24,9 +28,6 @@ p a:hover {
   color: #30534D;
   background-color: #ADEEE3;
 }
-li {
-  list-style-type: none;
-}
 mark {
   background: none !important;
   color: #F26C65;
@@ -34,6 +35,18 @@ mark {
 }
 ul {
   padding-inline-start: 0;
+}
+.gray {
+  color: #3E3E3E;
+}
+.teal {
+  color: #4ECDC4;
+}
+.teal-light {
+  color: #ADEEE3;
+}
+.fill {
+  height: 300px;
 }
 ::-webkit-scrollbar {
   width: 8px;
@@ -75,8 +88,27 @@ ul {
   padding: 7rem 0;
 }
 .container {
-  padding-top: 2rem;
+  padding-top: 3rem;
 }
-.about-icons {
-  color: #3E3E3E;
+.skills li {
+  list-style-type: none;
+}
+.card {
+  border: none;
+}
+.card h6 small {
+  color: #F26C65;
+}
+.card .card-header {
+  background-color: white;
+  border: 0 0 1px 0 solid #ADEEE3;
+  border-radius: 0px;
+}
+.card .card-header:hover {
+  cursor: pointer;
+  background-color: #ADEEE3;
+}
+.card .card-header:hover h6,
+.card .card-header:hover small {
+  color: #30534D;
 }

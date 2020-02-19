@@ -19,6 +19,10 @@ h6 {
   color: @gray-dark;
 }
 
+a, li {
+  font-family: 'Montserrat', sans-serif;
+}
+
 p {
   font-family: 'Montserrat', sans-serif;
   color: @gray-dark;
@@ -35,10 +39,6 @@ p {
   }
 }
 
-li {
-    list-style-type: none;
-}
-
 mark {
   background: none !important;
   color: @red-pastel;
@@ -47,6 +47,22 @@ mark {
 
 ul {
   padding-inline-start: 0;
+}
+
+.gray {
+  color: @gray;
+}
+
+.teal {
+  color: @teal;
+}
+
+.teal-light {
+  color: @teal-light;
+}
+
+.fill {
+  height: 300px;
 }
 
 ::-webkit-scrollbar {
@@ -101,9 +117,36 @@ ul {
 }
 
 .container {
-  padding-top: 2rem;
+  padding-top: 3rem;
 }
 
-.about-icons {
-  color: @gray;
+.skills {
+  li {
+      list-style-type: none;
+  }
+}
+
+.card {
+  border: none;
+
+  h6 {
+    small {
+      color: @red-pastel;
+    }
+  }
+
+  .card-header {
+    background-color: white;
+    border: 0 0 1px 0 solid @teal-light;
+    border-radius: 0px;
+  }
+
+  .card-header:hover {
+    cursor: pointer;
+    background-color: @teal-light;
+      h6, small {
+        color: @teal-dark;
+      }
+  }
+
 }
