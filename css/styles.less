@@ -4,21 +4,49 @@
 @gray-dark: #141414;
 @gray: #3E3E3E;
 @red-pastel: #F26C65;
+@cedar-chest: #C75953;
+@middle-red-purple: #390040;
+@viridian-green: #068D9D;
 
 h1, h2, h3, h4, h5 {
   font-family: 'Roboto Mono', monospace;
   color: @gray-dark;
 }
 
-h6, p {
+h6 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: bold;
+  color: @gray-dark;
+}
+
+p {
   font-family: 'Montserrat', sans-serif;
   color: @gray-dark;
+
+  a {
+    color: @cedar-chest;
+    font-weight: bold;
+    text-decoration: underline;
+  }
+
+  a:hover {
+    color: @teal-dark;
+    background-color: @teal-light;
+  }
+}
+
+li {
+    list-style-type: none;
 }
 
 mark {
   background: none !important;
   color: @red-pastel;
   font-weight: bold;
+}
+
+ul {
+  padding-inline-start: 0;
 }
 
 ::-webkit-scrollbar {
@@ -72,9 +100,8 @@ mark {
   padding: 7rem 0;
 }
 
-.new-section {
-  margin-top: 20%;
-  margin-bottom: 20%;
+.container {
+  padding-top: 2rem;
 }
 
 .about-icons {

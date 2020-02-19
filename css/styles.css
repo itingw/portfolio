@@ -6,15 +6,34 @@ h5 {
   font-family: 'Roboto Mono', monospace;
   color: #141414;
 }
-h6,
+h6 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: bold;
+  color: #141414;
+}
 p {
   font-family: 'Montserrat', sans-serif;
   color: #141414;
+}
+p a {
+  color: #C75953;
+  font-weight: bold;
+  text-decoration: underline;
+}
+p a:hover {
+  color: #30534D;
+  background-color: #ADEEE3;
+}
+li {
+  list-style-type: none;
 }
 mark {
   background: none !important;
   color: #F26C65;
   font-weight: bold;
+}
+ul {
+  padding-inline-start: 0;
 }
 ::-webkit-scrollbar {
   width: 8px;
@@ -55,9 +74,8 @@ mark {
   background-color: white;
   padding: 7rem 0;
 }
-.new-section {
-  margin-top: 20%;
-  margin-bottom: 20%;
+.container {
+  padding-top: 2rem;
 }
 .about-icons {
   color: #3E3E3E;
