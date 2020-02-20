@@ -93,22 +93,49 @@ ul {
 .skills li {
   list-style-type: none;
 }
-.card {
+#experience .card {
   border: none;
 }
-.card h6 small {
+#experience .card h6 small {
   color: #F26C65;
 }
-.card .card-header {
+#experience .card .card-header {
   background-color: white;
   border: 0 0 1px 0 solid #ADEEE3;
   border-radius: 0px;
 }
-.card .card-header:hover {
+#experience .card .card-header:hover {
   cursor: pointer;
   background-color: #ADEEE3;
 }
-.card .card-header:hover h6,
-.card .card-header:hover small {
+#experience .card .card-header:hover h6,
+#experience .card .card-header:hover small {
   color: #30534D;
+}
+#work button {
+  border: 1px dashed #F26C65;
+  color: #F26C65;
+  margin: 0.5rem;
+  font-family: 'Roboto Mono', monospace;
+}
+#work button:hover {
+  color: #C75953;
+  border: 1px solid #C75953;
+}
+#work .selected {
+  background-color: #F26C65;
+  color: white;
+  border: 1px solid #C75953;
+}
+#work .card {
+  border: none;
+}
+#work .card .card-img-overlay {
+  display: none;
+}
+#work .card:hover {
+  background-color: #ADEEE3;
+}
+#work .card:hover .card-img-overlay {
+  display: block;
 }
