@@ -133,9 +133,24 @@ ul {
 #work .card .card-img-overlay {
   display: none;
 }
+#work .card .card-img-overlay button.skillTag {
+  color: white;
+  background-color: rgba(48, 83, 77, 0.5);
+  border: 1px solid #30534D;
+  border-radius: 2px;
+  font-size: 0.75rem;
+  cursor: default;
+  padding: 0;
+  margin: 2px;
+}
 #work .card:hover {
   background-color: #ADEEE3;
 }
 #work .card:hover .card-img-overlay {
-  display: block;
+  display: grid;
+  grid-template-rows: 20% 40% 20% 20%;
+}
+#work .card:hover .card-text {
+  grid-row-start: 4;
+  grid-row-end: 5;
 }

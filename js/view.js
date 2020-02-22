@@ -39,7 +39,7 @@ $(function() {
     renderProjects: function() {
       let projectsRow = this.createRow();
       projectsData.projects.forEach(function(project) {
-        let projectCard = display.createCard(project.thumb, project.name, project.desc);
+        let projectCard = display.createCard(project.thumb, project.name, project.skillTag, project.desc);
         projectsRow.append(projectCard);
       });
 
@@ -51,7 +51,7 @@ $(function() {
       row.className = "row row content col";
       return row;
     },
-    createCard: function(projectThumb, projectTitle, projectDesc) {
+    createCard: function(projectThumb, projectTitle, skillTagData, projectDesc) {
       let card = document.createElement("div");
       card.className = "card col-6 col-sm-4 col-md-3";
 
@@ -62,23 +62,36 @@ $(function() {
       let overlay = document.createElement("div");
       overlay.className = "card-img-overlay";
 
-      let title = document.createElement("h5");
+      let title = document.createElement("h6");
       title.className = "card-title";
       title.innerHTML = projectTitle;
 
-      let description = document.createElement("p");
-      description.className = "card-text";
+      let skillTagGroup = document.createElement("div");
+
+      skillTagData.forEach(function(skill) {
+        let skillTag = display.createSkillTag(skill);
+        skillTagGroup.className = "d-none d-lg-block";
+        skillTagGroup.append(skillTag);
+      });
+
+      let description = document.createElement("small");
+      description.className = "card-text d-none d-lg-block";
       description.innerHTML = projectDesc;
 
-      overlay.append(title, description);
+      overlay.append(title, skillTagGroup, description);
 
       card.append(thumb, overlay);
 
       return card;
-    }
+    },
+    createSkillTag: function(skill) {
+      let skillTag = document.createElement("button");
+      skillTag.type = "button";
+      skillTag.className = "skillTag disabled"
+      skillTag.innerHTML = skill;
 
-
-
+      return skillTag;
+    },
 
   }
 

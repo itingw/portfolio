@@ -1,4 +1,5 @@
 @teal-dark: #30534D;
+@teal-dark-transparent: rgba(48, 83, 77, 0.5);
 @teal: #4ECDC4;
 @teal-light: #ADEEE3;
 @gray-dark: #141414;
@@ -155,7 +156,7 @@ ul {
 
 #work {
   button {
-    border: 1px  dashed @red-pastel;
+    border: 1px dashed @red-pastel;
     color: @red-pastel;
     margin: 0.5rem;
     font-family: 'Roboto Mono', monospace;
@@ -176,6 +177,18 @@ ul {
     border: none;
     .card-img-overlay {
       display: none;
+
+      button.skillTag {
+        color: white;
+        background-color: @teal-dark-transparent;
+        border: 1px solid @teal-dark;
+        border-radius: 2px;
+        font-size: 0.75rem;
+        cursor: default;
+        padding: 0;
+        margin: 2px;
+      }
+
     }
 
   }
@@ -184,8 +197,15 @@ ul {
     background-color: @teal-light;
 
     .card-img-overlay {
-      display: block;
+      display: grid;
+      grid-template-rows: 20% 40% 20% 20%;
     }
+
+    .card-text {
+      grid-row-start: 4;
+      grid-row-end: 5;
+    }
+
   }
 
 
