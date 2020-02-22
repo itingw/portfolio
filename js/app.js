@@ -1,5 +1,5 @@
 $(function() {
-  console.log("view.js");
+
   let display = {
 
     init: function() {
@@ -27,8 +27,12 @@ $(function() {
       let icon = document.createElement("i");
 
       button.type = "button";
-      button.className = active? "btn selected" : "btn";
+      button.id = innerHTML;
+      button.className = active? "skill btn selected" : "skill btn";
       button.innerHTML = " " + innerHTML;
+      button.onclick = function() {
+        display.filterCards(innerHTML);
+      };
 
       icon.className = iconClass;
 
@@ -53,7 +57,7 @@ $(function() {
     },
     createCard: function(projectThumb, projectTitle, skillTagData, projectDesc) {
       let card = document.createElement("div");
-      card.className = "card col-6 col-sm-4 col-md-3";
+      card.className = "project card col-6 col-sm-4 col-md-3";
 
       let thumb = document.createElement("img");
       thumb.className = "card-img";
@@ -67,6 +71,7 @@ $(function() {
       title.innerHTML = projectTitle;
 
       let skillTagGroup = document.createElement("div");
+      skillTagGroup.className = "skill-tags";
 
       skillTagData.forEach(function(skill) {
         let skillTag = display.createSkillTag(skill);
@@ -87,18 +92,37 @@ $(function() {
     createSkillTag: function(skill) {
       let skillTag = document.createElement("button");
       skillTag.type = "button";
-      skillTag.className = "skillTag disabled"
+      skillTag.className = "skillTag disabled " + skill
       skillTag.innerHTML = skill;
 
       return skillTag;
     },
+    filterCards: function(skill) {
+      let selectedSkillButton = document.getElementById(skill);
+      if(selectedSkillButton.classList.contains("selected")){
+        return;
+      }
+      else {
+        $(".skill").removeClass("selected");
+        selectedSkillButton.classList.toggle("selected");
+
+        if(skill === " see all") {
+          $(".card").removeClass("hidden");
+        }
+        else {
+          let skillClass = "." + skill;
+          $(".card").addClass("hidden");
+
+          $(".card " + skillClass).closest(".card").removeClass("hidden");
+        }
+
+      }
+
+    }
 
   }
 
 
 display.init();
-
-
-
 
 });

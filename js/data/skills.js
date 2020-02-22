@@ -1,8 +1,11 @@
 
 let skillsData = {
 	"skills": [{
-		"name": "HTML/CSS",
+		"name": "HTML",
 		"icon": "fas fa-code"
+  }, {
+    "name": "CSS",
+    "icon": "fab fa-css3-alt"
 	}, {
 		"name": "JavaScript",
 		"icon": "fab fa-js"
@@ -16,7 +19,7 @@ let skillsData = {
 		"name": "XD",
 		"icon": "fab fa-adobe"
 	}, {
-		"name": "Hand Sketch",
+		"name": "Sketching",
 		"icon": "fas fa-pencil-alt"
 	}, {
 		"name": "Excel",

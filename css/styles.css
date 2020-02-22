@@ -127,6 +127,9 @@ ul {
   color: white;
   border: 1px solid #C75953;
 }
+#work .selected:hover {
+  color: white;
+}
 #work .card {
   border: none;
 }
@@ -153,4 +156,7 @@ ul {
 #work .card:hover .card-text {
   grid-row-start: 4;
   grid-row-end: 5;
+}
+#work .card.hidden {
+  display: none;
 }
