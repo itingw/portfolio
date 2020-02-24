@@ -16,9 +16,9 @@ let skillsData = {
 		"name": "Illustrator",
 		"icon": "fab fa-adobe"
 	}, {
-		"name": "XD",
-		"icon": "fab fa-adobe"
-	}, {
+	// 	"name": "XD",
+	// 	"icon": "fab fa-adobe"
+	// }, {
 		"name": "Sketching",
 		"icon": "fas fa-pencil-alt"
 	}, {

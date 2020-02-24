@@ -5,7 +5,7 @@ $(function() {
     init: function() {
       this.renderSkills();
       this.renderProjects();
-
+      // this.renderModal();
     },
 
     renderSkills: function() {
@@ -42,10 +42,11 @@ $(function() {
     },
     renderProjects: function() {
       let projectsRow = this.createRow();
-      projectsData.projects.forEach(function(project) {
-        let projectCard = display.createCard(project.thumb, project.name, project.skillTag, project.desc);
+      for(i=0; i<projectsData.projects.length; i++) {
+        let project = projectsData.projects[i];
+        let projectCard = display.createCard(project.thumb, project.name, project.skillTag, project.desc, i);
         projectsRow.append(projectCard);
-      });
+      }
 
       $("#work").append(projectsRow);
 
@@ -55,9 +56,46 @@ $(function() {
       row.className = "row row content col";
       return row;
     },
-    createCard: function(projectThumb, projectTitle, skillTagData, projectDesc) {
+    openModal: function(projIndex) {
+      let project = projectsData.projects[projIndex];
+
+      $(".modal-title").html(project.name);
+      $('.carousel-item').remove();
+      $('#mycarousel').carousel({ interval: 1000});
+
+      for(i=0; i<project.images.length; i++) {
+        let image = document.createElement("img");
+        image.className = "img-fluid";
+        image.src = project.images[i] ;
+
+        let caption = document.createElement("p");
+        caption.innerHTML = project.captions[i];
+
+        let captionDiv = document.createElement("div");
+        captionDiv.className = "carousel-caption";
+
+        captionDiv.append(caption);
+
+        let carouselItem = document.createElement("div");
+        carouselItem.className = (i===0)? "carousel-item active" : "carousel-item";
+        console.log(carouselItem.className);
+
+        carouselItem.append(image, captionDiv);
+
+        $(".carousel-inner").append(carouselItem);
+      }
+
+
+
+      $("#projectModal").modal('show');
+
+    },
+    createCard: function(projectThumb, projectTitle, skillTagData, projectDesc, index) {
       let card = document.createElement("div");
       card.className = "project card col-6 col-sm-4 col-md-3";
+      card.onclick = function() {
+        display.openModal(index);
+      }
 
       let thumb = document.createElement("img");
       thumb.className = "card-img";
@@ -112,12 +150,36 @@ $(function() {
         else {
           let skillClass = "." + skill;
           $(".card").addClass("hidden");
-
           $(".card " + skillClass).closest(".card").removeClass("hidden");
+        }
+      }
+
+    },
+
+    renderModal: function() {
+      for(var i = 0; i < projectsData.projects.length; i++)
+      {
+        var modalID = "modal" + i;
+
+        var formattedModalstart = HTMLmodalStart.replace(/%modal%/g, modalID);
+        $("#projects").append(formattedModalstart);
+
+        var modalImageLength = projectsData.projects[i].images.length;
+        for (var a = 0; a < modalImageLength; a++) {
+          var slideNo = a+1 + "/" + modalImageLength;
+          var formattedModalslide = HTMLmodalSlide.replace("%page%",slideNo).replace("%data%",projectsData.projects[i].images[a]);
+          $(".modal-content:last").append(formattedModalslide);
+        }
+
+        var formattedArrows = HTMLmodalArrows.replace(/%modal%/g, modalID);
+        $(".modal-content:last").append(formattedArrows, HTMLmodalCaption);
+
+        for (var b = 0; b < modalImageLength; b++) {
+          var formattedModalcolumn = HTMLmodalColumn.replace("%data%", projectsData.projects[i].images[b]).replace("%slideNo%", b+1).replace("%modal%", modalID).replace("%content%", projectsData.projects[i].captions[b]);
+          $(".modal-content:last").append(formattedModalcolumn);
         }
 
       }
-
     }
 
   }
