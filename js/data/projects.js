@@ -44,7 +44,7 @@ var projectsData = {
 
   },{
     "name": "City of Pittsburgh Utility App",
-    "desc": "web interface built on DOE's SEED platform",
+    "desc": "user interface mockup for city utility data",
     "skillTag": ["Illustrator", "Excel"],
     "thumb": "img/thumb/pittsburgh.svg",
     "images": [
@@ -59,8 +59,8 @@ var projectsData = {
 
     "captions": [""]
   },{
-    "name": "Poster img/modal",
-    "desc": "img/modals for School of Architecture events",
+    "name": "Poster",
+    "desc": "posters for School of Architecture events",
     "skillTag": ["Illustrator"],
     "thumb": "img/thumb/poster.svg",
     "images": [
@@ -81,7 +81,7 @@ var projectsData = {
     ],
     "captions": [""]
   },{
-    "name": "Architectural img/modal",
+    "name": "Architectural Design",
     "desc": "sustainable design, design-build",
     "skillTag": ["Illustrator", "Photoshop", "Sketching"],
     "thumb": "img/thumb/arch.svg",
@@ -97,33 +97,51 @@ var projectsData = {
     "captions": [""]
   },{
     "name": "Scrumptious Stops",
-    "desc": "",
+    "desc": "Google Maps & Foursquare API trip planner",
     "skillTag": ["Illustrator", "JavaScript", "HTML", "CSS", "Git"],
     "thumb": "img/thumb/scrumptious.svg",
-    "link": "https://itingw.github.io/Scrumptious-Stops/",
     "images": [""],
-    "captions": [""]
+    "captions": ["https://itingw.github.io/Scrumptious-Stops/"],
   },{
     "name": "Bug Invasion",
-    "desc": "",
+    "desc": "revamped classic arcade game",
     "skillTag": ["JavaScript", "Git"],
     "thumb": "img/thumb/bug.svg",
-    "link": "https://itingw.github.io/Bug-Invasion/",
     "images": [""],
     "captions": [""]
   },{
     "name": "Portfolio",
-    "desc": "",
+    "desc": "the making of",
     "skillTag": ["Illustrator", "JavaScript", "HTML", "CSS", "Git", "Sketching"],
     "thumb": "img/thumb/portfolio.svg",
     "images": [""],
     "captions": [""]
   },{
     "name": "Address Book",
-    "desc": "",
+    "desc": "master detail user interface with CRUD",
     "skillTag": ["Illustrator", "JavaScript", "HTML", "CSS"],
     "thumb": "img/thumb/addressbook.svg",
-    "link": "https://itingw.github.io/address-book/",
+    "images": [""],
+    "captions": [""]
+  },{
+    "name": "RunTrack App",
+    "desc": "UI design for running tracking application",
+    "skillTag": ["XD","Illustrator"],
+    "thumb": "img/thumb/run.svg",
+    "images": [""],
+    "captions": [""]
+  },{
+    "name": "Chickpea Yarns",
+    "desc": "UI design for potential commercial application",
+    "skillTag": ["XD","Illustrator"],
+    "thumb": "img/thumb/chickpea.svg",
+    "images": [""],
+    "captions": [""]
+  },{
+    "name": "Rock Climbing App",
+    "desc": "UI design for rock climbing recording application",
+    "skillTag": ["XD","Illustrator"],
+    "thumb": "img/thumb/climbing.svg",
     "images": [""],
     "captions": [""]
   }]

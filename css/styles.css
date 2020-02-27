@@ -28,6 +28,9 @@ p a:hover {
   color: #30534D;
   background-color: #ADEEE3;
 }
+p i {
+  color: #C75953;
+}
 mark {
   background: none !important;
   color: #F26C65;
@@ -176,4 +179,11 @@ ul {
 .carousel-control-next:hover,
 .carousel-control-prev:hover {
   background: rgba(0, 0, 0, 0.2);
+}
+.contact {
+  background-color: #ADEEE3;
+  padding-bottom: 3em;
+}
+.contact .contact-link {
+  text-align: center;
 }

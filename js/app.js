@@ -5,7 +5,6 @@ $(function() {
     init: function() {
       this.renderSkills();
       this.renderProjects();
-      // this.renderModal();
     },
 
     renderSkills: function() {
