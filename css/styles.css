@@ -162,10 +162,18 @@ ul {
   display: none;
 }
 .carousel-item {
-  max-height: 75vh;
+  max-height: 100%;
+  text-align: center;
+}
+.carousel-item .img-fluid {
+  max-height: 70vh;
 }
 .carousel-caption {
   position: relative;
   left: auto;
   right: auto;
+}
+.carousel-control-next:hover,
+.carousel-control-prev:hover {
+  background: rgba(0, 0, 0, 0.2);
 }

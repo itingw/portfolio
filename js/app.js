@@ -61,7 +61,6 @@ $(function() {
 
       $(".modal-title").html(project.name);
       $('.carousel-item').remove();
-      $('#mycarousel').carousel({ interval: 1000});
 
       for(i=0; i<project.images.length; i++) {
         let image = document.createElement("img");
@@ -84,8 +83,6 @@ $(function() {
 
         $(".carousel-inner").append(carouselItem);
       }
-
-
 
       $("#projectModal").modal('show');
 
