@@ -11,10 +11,10 @@ var projectsData = {
       "img/modal/buildfit_4.jpg"
       ],
     "captions":[
-      "image",
-      "image2",
-      "image3",
-      "image4"
+      "",
+      "",
+      "User Journey through BuildFIT as a financial executive",
+      "User Journey through BuildFIT as a facility manager"
     ]
   }, {
     "name": "PNC Building Portfolio Utility Report",
@@ -32,14 +32,14 @@ var projectsData = {
       "img/modal/pnc_7.png"
     ],
     "captions":[
-      "image",
-      "image2",
-      "image3",
-      "image",
-      "image2",
-      "image3",
-      "image",
-      "image2"
+      "Transforming raw unintelligible data into actionable, visual presentations to engage stakeholders",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
     ]
 
   },{
@@ -57,7 +57,7 @@ var projectsData = {
       "img/modal/pitts_7.jpg"
     ],
 
-    "captions": [""]
+    "captions": ["", "", "", "", "", "", "", ""]
   },{
     "name": "Poster",
     "desc": "posters for School of Architecture events",
@@ -67,7 +67,7 @@ var projectsData = {
       "img/modal/poster_1.png",
       "img/modal/poster_2.png"
     ],
-    "captions": [""]
+    "captions": ["", ""]
   },{
     "name": "Hand Drawing",
     "desc": "perspective drawing, architectural diagrams, anatomy",
@@ -79,7 +79,7 @@ var projectsData = {
       "img/modal/draw_3.jpg",
       "img/modal/draw_4.jpg"
     ],
-    "captions": [""]
+    "captions": ["", "", "", "",]
   },{
     "name": "Architectural Design",
     "desc": "sustainable design, design-build",
@@ -94,55 +94,75 @@ var projectsData = {
       "img/modal/arch_6.png",
       "img/modal/arch_7.png"
     ],
-    "captions": [""]
+    "captions": ["", "", "", "", "", "", ""]
   },{
     "name": "Scrumptious Stops",
     "desc": "Google Maps & Foursquare API trip planner",
     "skillTag": ["Illustrator", "JavaScript", "HTML", "CSS", "Git"],
     "thumb": "img/thumb/scrumptious.svg",
-    "images": [""],
-    "captions": ["https://itingw.github.io/Scrumptious-Stops/"],
+    "images": ["img/modal/scrumptious_1.png", "img/modal/scrumptious_2.png"],
+    "captions": [
+      "An app to map my favorite restaurants and cafes in central Florida. <a href='https://itingw.github.io/Scrumptious-Stops/'>See it live! <i class='fas fa-external-link-alt'></i></a> ",
+      "Capability to highlight favorite food and cafes near routes <a href='https://github.com/itingw/Scrumptious-Stops/'> Code <i class='fas fa-external-link-alt'></i></a>"
+    ]
   },{
     "name": "Bug Invasion",
     "desc": "revamped classic arcade game",
     "skillTag": ["JavaScript", "Git"],
     "thumb": "img/thumb/bug.svg",
-    "images": [""],
-    "captions": [""]
+    "images": ["img/modal/bug_1.png", "img/modal/bug_2.png"],
+    "captions": [
+      "Revamped classic arcade game instructions <a href='https://itingw.github.io/Bug-Invasion/'>Play here! <i class='fas fa-external-link-alt'></i></a>",
+      "Ten possible maps with increasing enemy bugs as the player progresses<a href='https://github.com/itingw/Bug-Invasion'> Code <i class='fas fa-external-link-alt'></i></a>"
+    ]
   },{
     "name": "Portfolio",
     "desc": "the making of",
-    "skillTag": ["Illustrator", "JavaScript", "HTML", "CSS", "Git", "Sketching"],
+    "skillTag": ["Illustrator", "XD", "JavaScript", "HTML", "CSS", "Git", "Sketching"],
     "thumb": "img/thumb/portfolio.svg",
-    "images": [""],
-    "captions": [""]
+    "images": ["img/modal/portfolio_4.jpg", "img/modal/portfolio_1.png", "img/modal/portfolio_2.png", "img/modal/portfolio_3.png",],
+    "captions": ["idea wireframing for portfolio", "project prototyping proposal", "project prototyping proposal", "inspirations and references"]
   },{
     "name": "Address Book",
     "desc": "master detail user interface with CRUD",
     "skillTag": ["Illustrator", "JavaScript", "HTML", "CSS"],
     "thumb": "img/thumb/addressbook.svg",
-    "images": [""],
-    "captions": [""]
+    "images": ["img/modal/addressbook_1.png","img/modal/addressbook_2.png"],
+    "captions": [
+      "A simple address book featuring feline friends demonstrating CRUD operations in a master-detail interface. <a href='https://itingw.github.io/address-book/'>See it live! <i class='fas fa-external-link-alt'></i></a>",
+      "Updating a user's address book entry <a href='https://github.com/itingw/address-book'>Code <i class='fas fa-external-link-alt'></i></a>"
+    ]
   },{
     "name": "RunTrack App",
     "desc": "UI design for running tracking application",
     "skillTag": ["XD","Illustrator"],
     "thumb": "img/thumb/run.svg",
-    "images": [""],
-    "captions": [""]
+    "images": ["img/modal/run_1.png","img/modal/run_2.png","img/modal/run_3.png","img/modal/run_4.png"],
+    "captions": [
+      "A <a href='https://www.dailyui.co/'> daily UI challenge design </a><i class='fas fa-external-link-alt'></i> for a running app",
+      "", "", ""]
   },{
     "name": "Chickpea Yarns",
     "desc": "UI design for potential commercial application",
     "skillTag": ["XD","Illustrator"],
     "thumb": "img/thumb/chickpea.svg",
-    "images": [""],
-    "captions": [""]
+    "images": ["img/modal/yarn_1.png","img/modal/yarn_2.png","img/modal/yarn_3.png","img/modal/yarn_4.png"],
+    "captions": [
+        "A <a href='https://www.dailyui.co/'> daily UI challenge design </a> for a product page",
+        "Color swatch selection UI",
+        "Product page in mobile screen sizes",
+        "Shopping cart - check out the <a href='https://www.etsy.com/shop/chickpeayarns'><i class='fas fa-external-link-alt'></i> Etsy store </a>"
+      ]
   },{
     "name": "Rock Climbing App",
     "desc": "UI design for rock climbing recording application",
     "skillTag": ["XD","Illustrator"],
     "thumb": "img/thumb/climbing.svg",
-    "images": [""],
-    "captions": [""]
+    "images": ["img/modal/climb_1.png","img/modal/climb_2.png"],
+    "captions": [
+      "User workflow for a rock climbing journal.",
+      "Workout workflow design for <a href='https://www.dailyui.co/'> Daily UI challenge design </a><i class='fas fa-external-link-alt'></i>"
+
+    ]
   }]
 };
