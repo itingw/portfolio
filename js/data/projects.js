@@ -125,7 +125,7 @@ var projectsData = {
   },{
     "name": "Address Book",
     "desc": "master detail user interface with CRUD",
-    "skillTag": ["Illustrator", "JavaScript", "HTML", "CSS"],
+    "skillTag": ["Illustrator", "JavaScript", "HTML", "CSS", "Git"],
     "thumb": "img/thumb/addressbook.svg",
     "images": ["img/modal/addressbook_1.png","img/modal/addressbook_2.png"],
     "captions": [
