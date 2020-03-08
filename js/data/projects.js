@@ -115,8 +115,8 @@ var projectsData = {
     "desc": "the making of",
     "skillTag": ["Illustrator", "XD", "JavaScript", "HTML", "CSS", "Git", "Sketching"],
     "thumb": "img/thumb/portfolio.svg",
-    "images": ["img/modal/portfolio_4.jpg", "img/modal/portfolio_1.PNG", "img/modal/portfolio_2.PNG", "img/modal/portfolio_3.PNG",],
-    "captions": ["idea wireframing for portfolio", "project prototyping proposal", "project prototyping proposal", "inspirations and references. <a href='https://github.com/itingw/portfolio/' target='_blank'>Code <i class='fas fa-external-link-alt'></i></a>"]
+    "images": ["img/modal/portfolio_4.jpg","img/modal/portfolio_1.PNG",],
+    "captions": ["idea wireframing for portfolio", "user workflow diagram <a href='https://github.com/itingw/portfolio/' target='_blank'>Code <i class='fas fa-external-link-alt'></i></a>"]
   },{
     "name": "Architectural Design",
     "desc": "sustainable design, design-build",
