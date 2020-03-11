@@ -119,32 +119,32 @@ ul {
 #experience .card .card-header:hover small {
   color: #30534D;
 }
-#work button {
+#projects button {
   border: 1px dashed #F26C65;
   color: #F26C65;
   margin: 0.5rem;
   font-family: 'Roboto Mono', monospace;
 }
-#work button:hover {
+#projects button:hover {
   color: #C75953;
   border: 1px solid #C75953;
 }
-#work .selected {
+#projects .selected {
   background-color: #F26C65;
   color: white;
   border: 1px solid #C75953;
 }
-#work .selected:hover {
+#projects .selected:hover {
   color: white;
 }
-#work .card {
+#projects .card {
   border: none;
   cursor: pointer;
 }
-#work .card .card-img-overlay {
+#projects .card .card-img-overlay {
   display: none;
 }
-#work .card .card-img-overlay button.skillTag {
+#projects .card .card-img-overlay button.skillTag {
   color: white;
   background-color: rgba(48, 83, 77, 0.5);
   border: 1px solid #30534D;
@@ -154,18 +154,18 @@ ul {
   padding: 0;
   margin: 2px;
 }
-#work .card:hover {
+#projects .card:hover {
   background-color: #ADEEE3;
 }
-#work .card:hover .card-img-overlay {
+#projects .card:hover .card-img-overlay {
   display: grid;
   grid-template-rows: 25% 40% 15% 20%;
 }
-#work .card:hover .card-text {
+#projects .card:hover .card-text {
   grid-row-start: 4;
   grid-row-end: 5;
 }
-#work .card.hidden {
+#projects .card.hidden {
   display: none;
 }
 .carousel-item {

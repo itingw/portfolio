@@ -18,7 +18,7 @@ $(function() {
         skillsRow.append(skillButton);
       });
 
-      $('#work').append(skillsRow);
+      $('#projects').append(skillsRow);
 
     },
     createSkillButton: function(iconClass, innerHTML, active) {
@@ -47,7 +47,7 @@ $(function() {
         projectsRow.append(projectCard);
       }
 
-      $("#work").append(projectsRow);
+      $("#projects").append(projectsRow);
 
     },
     createRow: function() {
