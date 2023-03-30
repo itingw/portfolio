@@ -1,4 +1,4 @@
-var projectsData = {
+let projectsData = {
   "projects": [{
     "name": "BuildFIT Marketing & Interface",
     "desc": "brand design and user interface development",

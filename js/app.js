@@ -3,25 +3,86 @@ $(function() {
   let display = {
 
     init: function() {
-      this.renderSkills();
+      this.renderIntroSkills();
+      this.renderExperience();
+      this.renderProjectSkills();
       this.renderProjects();
     },
+    renderIntroSkills: function() {
+      introSkillsData.skills.forEach((skill) => {
+        let introSkill = this.createIntroSkillColumn(skill);
 
-    renderSkills: function() {
+        $('#aboutSkills').append(introSkill);
+
+      });
+
+    },
+    renderExperience: function() {
+      //add experiences renderer here!
+      console.log("experience!", experienceData);
+    },
+    renderProjectSkills: function() {
       let skillsRow = this.createRow();
 
-      let allButton = this.createSkillButton("fas fa-asterisk", " see all", true);
+      let allButton = this.createProjectSkillButton("fas fa-asterisk", " see all", true);
       skillsRow.append(allButton);
 
-      skillsData.skills.forEach(function(skill) {
-        let skillButton = display.createSkillButton(skill.icon, skill.name, false);
+      projectSkillsData.skills.forEach(function(skill) {
+        let skillButton = display.createProjectSkillButton(skill.icon, skill.name, false);
         skillsRow.append(skillButton);
       });
 
       $('#projects').append(skillsRow);
 
     },
-    createSkillButton: function(iconClass, innerHTML, active) {
+    createElement: (type, className, innerHTML ) => {
+      let element = document.createElement(type);
+      element.className = className ? className : "";
+      element.innerHTML = innerHTML ? innerHTML : "";
+
+      return element;
+    },
+    createIntroSkillColumn: function(skill) {
+      console.log(skill);
+      let column = this.createElement(
+        "div", 
+        "col-12 col-sm-4 mb-5",
+      );
+
+      let icon = this.createElement(
+        "i", 
+        "fa fa-4x col-12 col-sm-4 gray " + skill.iconCls,
+      );
+
+      let title = this.createElement(
+        "h4", 
+        "mb-5 mt-5", 
+        skill.title 
+      )
+
+      let description = document.createElement(
+        "h6",
+        "m-3",
+        skill.description
+      )
+
+      let skillList = this.createElement(
+        "ul",
+        "skills"
+      );
+      skill.skills.forEach((skill) => {
+        let skillBullet = this.createElement("li", null, skill);
+        skillList.append(skillBullet);
+      });
+
+      column.append(icon);
+      column.append(title);
+      column.append(description);
+      column.append(skillList);
+
+      return column
+    },
+    createProjectSkillButton: function(iconClass, innerHTML, active) {
       let button = document.createElement("button");
       let icon = document.createElement("i");
 
@@ -76,7 +137,6 @@ $(function() {
 
         let carouselItem = document.createElement("div");
         carouselItem.className = (i===0)? "carousel-item active" : "carousel-item";
-        console.log(carouselItem.className);
 
         carouselItem.append(image, captionDiv);
 
