@@ -1,28 +1,28 @@
-function openModal(modalName) {
+let openModal = (modalName) => {
 
   modalName.style.display = "block";
 }
 
-function closeModal(modalName) {
+let closeModal = (modalName) => {
   modalName.style.display = "none";
 }
 
-var slideIndex = 1;
+let slideIndex = 1;
 
-function plusSlides(n, modalName) {
+let plusSlides =(n, modalName) => {
   showSlides(slideIndex += n, modalName);
 }
 
-function currentSlide(n, modalName) {
+let currentSlide(n, modalName) => {
   showSlides(slideIndex = n, modalName);
 }
 
-function showSlides(n, modalName) {
+let showSlides(n, modalName) => {
 
-  var i;
-  var slides = modalName.getElementsByClassName("mySlides");
-  var dots = modalName.getElementsByClassName("demo");
-  var captionText = modalName.getElementsByClassName("caption");
+  let i;
+  let slides = modalName.getElementsByClassName("mySlides");
+  let dots = modalName.getElementsByClassName("demo");
+  let captionText = modalName.getElementsByClassName("caption");
 
   if (n > slides.length) {slideIndex = 1}
   if (n < 1) {slideIndex = slides.length}

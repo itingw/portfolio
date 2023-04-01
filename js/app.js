@@ -1,14 +1,14 @@
-$(function() {
+$(() => {
 
   let display = {
 
-    init: function() {
+    init() {
       this.renderIntroSkills();
       this.renderExperience();
       this.renderProjectSkills();
       this.renderProjects();
     },
-    renderIntroSkills: function() {
+    renderIntroSkills() {
       introSkillsData.skills.forEach((skill) => {
         let introSkill = this.createIntroSkillColumn(skill);
 
@@ -17,17 +17,17 @@ $(function() {
       });
 
     },
-    renderExperience: function() {
+    renderExperience() {
       //add experiences renderer here!
       console.log("experience!", experienceData);
     },
-    renderProjectSkills: function() {
+    renderProjectSkills() {
       let skillsRow = this.createRow();
 
       let allButton = this.createProjectSkillButton("fas fa-asterisk", " see all", true);
       skillsRow.append(allButton);
 
-      projectSkillsData.skills.forEach(function(skill) {
+      projectSkillsData.skills.forEach((skill) => {
         let skillButton = display.createProjectSkillButton(skill.icon, skill.name, false);
         skillsRow.append(skillButton);
       });
@@ -42,7 +42,7 @@ $(function() {
 
       return element;
     },
-    createIntroSkillColumn: function(skill) {
+    createIntroSkillColumn(skill) {
       console.log(skill);
       let column = this.createElement(
         "div", 
@@ -82,7 +82,7 @@ $(function() {
 
       return column
     },
-    createProjectSkillButton: function(iconClass, innerHTML, active) {
+    createProjectSkillButton(iconClass, innerHTML, active) {
       let button = document.createElement("button");
       let icon = document.createElement("i");
 
@@ -90,7 +90,7 @@ $(function() {
       button.id = innerHTML;
       button.className = active? "skill btn selected" : "skill btn";
       button.innerHTML = " " + innerHTML;
-      button.onclick = function() {
+      button.onclick = () => {
         display.filterCards(innerHTML);
       };
 
@@ -100,7 +100,7 @@ $(function() {
 
       return button;
     },
-    renderProjects: function() {
+    renderProjects() {
       let projectsRow = this.createRow();
       for(i=0; i<projectsData.projects.length; i++) {
         let project = projectsData.projects[i];
@@ -111,12 +111,12 @@ $(function() {
       $("#projects").append(projectsRow);
 
     },
-    createRow: function() {
+    createRow() {
       let row = document.createElement("div");
       row.className = "row row content col";
       return row;
     },
-    openModal: function(projIndex) {
+    openModal(projIndex) {
       let project = projectsData.projects[projIndex];
 
       $(".modal-title").html(project.name);
@@ -146,10 +146,10 @@ $(function() {
       $("#projectModal").modal('show');
 
     },
-    createCard: function(projectThumb, projectTitle, skillTagData, projectDesc, index) {
+    createCard(projectThumb, projectTitle, skillTagData, projectDesc, index) {
       let card = document.createElement("div");
       card.className = "project card col-6 col-sm-4 col-md-3";
-      card.onclick = function() {
+      card.onclick = () => {
         display.openModal(index);
       }
 
@@ -167,7 +167,7 @@ $(function() {
       let skillTagGroup = document.createElement("div");
       skillTagGroup.className = "skill-tags";
 
-      skillTagData.forEach(function(skill) {
+      skillTagData.forEach((skill) => {
         let skillTag = display.createSkillTag(skill);
         skillTagGroup.className = "d-none d-lg-block";
         skillTagGroup.append(skillTag);
@@ -183,7 +183,7 @@ $(function() {
 
       return card;
     },
-    createSkillTag: function(skill) {
+    createSkillTag(skill) {
       let skillTag = document.createElement("button");
       skillTag.type = "button";
       skillTag.className = "skillTag disabled " + skill
@@ -191,7 +191,7 @@ $(function() {
 
       return skillTag;
     },
-    filterCards: function(skill) {
+    filterCards(skill) {
       let selectedSkillButton = document.getElementById(skill);
       if(selectedSkillButton.classList.contains("selected")){
         return;
@@ -212,26 +212,26 @@ $(function() {
 
     },
 
-    renderModal: function() {
-      for(var i = 0; i < projectsData.projects.length; i++)
+    renderModal() {
+      for(let i = 0; i < projectsData.projects.length; i++)
       {
-        var modalID = "modal" + i;
+        let modalID = "modal" + i;
 
-        var formattedModalstart = HTMLmodalStart.replace(/%modal%/g, modalID);
+        let formattedModalstart = HTMLmodalStart.replace(/%modal%/g, modalID);
         $("#projects").append(formattedModalstart);
 
-        var modalImageLength = projectsData.projects[i].images.length;
-        for (var a = 0; a < modalImageLength; a++) {
-          var slideNo = a+1 + "/" + modalImageLength;
-          var formattedModalslide = HTMLmodalSlide.replace("%page%",slideNo).replace("%data%",projectsData.projects[i].images[a]);
+        let modalImageLength = projectsData.projects[i].images.length;
+        for (let a = 0; a < modalImageLength; a++) {
+          let slideNo = a+1 + "/" + modalImageLength;
+          let formattedModalslide = HTMLmodalSlide.replace("%page%",slideNo).replace("%data%",projectsData.projects[i].images[a]);
           $(".modal-content:last").append(formattedModalslide);
         }
 
-        var formattedArrows = HTMLmodalArrows.replace(/%modal%/g, modalID);
+        let formattedArrows = HTMLmodalArrows.replace(/%modal%/g, modalID);
         $(".modal-content:last").append(formattedArrows, HTMLmodalCaption);
 
-        for (var b = 0; b < modalImageLength; b++) {
-          var formattedModalcolumn = HTMLmodalColumn.replace("%data%", projectsData.projects[i].images[b]).replace("%slideNo%", b+1).replace("%modal%", modalID).replace("%content%", projectsData.projects[i].captions[b]);
+        for (let b = 0; b < modalImageLength; b++) {
+          let formattedModalcolumn = HTMLmodalColumn.replace("%data%", projectsData.projects[i].images[b]).replace("%slideNo%", b+1).replace("%modal%", modalID).replace("%content%", projectsData.projects[i].captions[b]);
           $(".modal-content:last").append(formattedModalcolumn);
         }
 
