@@ -13,11 +13,11 @@ let plusSlides =(n, modalName) => {
   showSlides(slideIndex += n, modalName);
 }
 
-let currentSlide(n, modalName) => {
+let currentSlide = (n, modalName) => {
   showSlides(slideIndex = n, modalName);
 }
 
-let showSlides(n, modalName) => {
+let showSlides = (n, modalName) => {
 
   let i;
   let slides = modalName.getElementsByClassName("mySlides");
