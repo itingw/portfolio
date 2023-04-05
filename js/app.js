@@ -8,6 +8,28 @@ $(() => {
       this.renderProjectSkills();
       this.renderProjects();
     },
+    createElement: ( elementData ) => {
+      let element = document.createElement(elementData.type);
+      element.id = elementData.id ? elementData.id : "";
+      element.className = elementData.className ? elementData.className : "";
+      element.innerHTML = elementData.innerHTML ? elementData.innerHTML : "";
+      element.src = elementData.src ? elementData.src : null;
+      element.role = elementData.role ? elementData.role : null;
+      element.onclick = elementData.onClick ? elementData.onClick : null;
+
+      elementData.dataToggle ? element.setAttribute("data-toggle", elementData.dataToggle) : null;
+      elementData.dataTarget ? element.setAttribute("data-target", elementData.dataTarget) : null;
+      elementData.dataParent ? element.setAttribute("data-parent", elementData.dataParent) : null;
+
+      return element;
+    },
+    createRow(className) {
+      let row = this.createElement({
+        type: "div", 
+        className: className,
+      });
+      return row;
+    },
     renderIntroSkills() {
       introSkillsData.skills.forEach((skill) => {
         let introSkill = this.createIntroSkillColumn(skill);
@@ -15,14 +37,28 @@ $(() => {
         $('#aboutSkills').append(introSkill);
 
       });
-
     },
     renderExperience() {
-      //add experiences renderer here!
-      console.log("experience!", experienceData);
+      let experienceRow = this.createRow("row row-content");
+
+      let accordionDiv = this.createElement({
+        id: "accordion",
+        type: "div",
+        className: "col-12",
+      });
+
+      experienceData.experience.forEach((experience, i) => {
+        let experienceCard = this.createExperienceCard(experience, i);
+        accordionDiv.append(experienceCard);
+      })
+
+      experienceRow.append(accordionDiv)
+    
+      $('#experience').append(experienceRow);
+
     },
     renderProjectSkills() {
-      let skillsRow = this.createRow();
+      let skillsRow = this.createRow("row row content col");
 
       let allButton = this.createProjectSkillButton("fas fa-asterisk", " see all", true);
       skillsRow.append(allButton);
@@ -35,14 +71,16 @@ $(() => {
       $('#projects').append(skillsRow);
 
     },
-    createElement: ( elementData ) => {
-      let element = document.createElement(elementData.type);
-      element.id = elementData.id ? elementData.id : "";
-      element.className = elementData.className ? elementData.className : "";
-      element.innerHTML = elementData.innerHTML ? elementData.innerHTML : "";
-      element.src = elementData.src ? elementData.src : null;
-  
-      return element;
+    renderProjects() {
+      let projectsRow = this.createRow("row row content col");
+
+      projectsData.projects.forEach((project, i) => {
+        let projectCard = display.createCard(project.thumb, project.name, project.skillTag, project.desc, i);
+        projectsRow.append(projectCard);
+      });
+
+      $("#projects").append(projectsRow);
+
     },
     createIntroSkillColumn(skill) {
       let column = this.createElement({ 
@@ -83,17 +121,77 @@ $(() => {
 
       return column
     },
+    createExperienceCard(experience, i) {
+      let card = this.createElement({
+        type: "div",
+        className: "card",
+      });
+
+      let cardHeader = this.createElement({
+        type: "div",
+        className: "card-header",
+        role: "tab",
+        id: experience.id + "head",
+        dataToggle: "collapse",
+        dataTarget: "#" + experience.id,
+      });
+
+      let cardTitle = this.createElement({
+        type: "h6",
+        className: "mb-0",
+        innerHTML: experience.title + " " + `<small>` + experience.subtitle + `</small>`
+      });
+    
+      cardHeader.append(cardTitle);
+
+      let tabpanel = this.createElement({
+        type: "div",
+        className: i === 0 ? "collapse show": "collapse",
+        id: experience.id,
+        dataParent: "#accordion",
+        role: "tabpanel",
+      });
+      
+      let cardBody = this.createElement({
+        type: "div",
+        className: "card-body",
+      });
+
+      tabpanel.append(cardBody);
+
+      let duration = this.createElement({
+        type: "small",
+        className: "row mb-2 ml-1",
+        innerHTML: experience.duration,
+      });
+
+      let descriptionWrapper = this.createElement({ type: "small"});
+      let descriptionList = this.createElement({type: "ul"});
+      experience.description.forEach((bullet) => {
+        let bulletItem = this.createElement({
+          type: "li",
+          innerHTML: bullet
+        });
+        descriptionList.append(bulletItem);
+      });
+
+      descriptionWrapper.append(descriptionList);
+      cardBody.append(duration, descriptionWrapper);
+      card.append(cardHeader, tabpanel);
+      
+      return card;
+
+    },
     createProjectSkillButton(iconClass, innerHTML, active) {
       let button = this.createElement({
         type: "button",
         id: innerHTML,
         className: active ? "skill btn selected" : "skill btn",
         innerHTML: " " + innerHTML,
+        onClick: () => {
+          display.filterCards(innerHTML);
+        }
       });
-
-      button.onclick = () => {
-        display.filterCards(innerHTML);
-      };
 
       let icon = this.createElement({
         type: "i",
@@ -103,24 +201,6 @@ $(() => {
       button.prepend(icon);
 
       return button;
-    },
-    renderProjects() {
-      let projectsRow = this.createRow();
-
-      projectsData.projects.forEach((project, i) => {
-        let projectCard = display.createCard(project.thumb, project.name, project.skillTag, project.desc, i);
-        projectsRow.append(projectCard);
-      });
-
-      $("#projects").append(projectsRow);
-
-    },
-    createRow() {
-      let row = this.createElement({
-        type: "div", 
-        className: "row row content col"
-      });
-      return row;
     },
     openModal(projIndex) {
       let project = projectsData.projects[projIndex];
@@ -165,10 +245,10 @@ $(() => {
       let card = this.createElement({
         type: "div",
         className: "project card col-6 col-sm-4 col-md-3",
+        onClick: () => {
+          display.openModal(index);
+        },
       });
-      card.onclick = () => {
-        display.openModal(index);
-      }
 
       let thumb = this.createElement({
         type: "img",
