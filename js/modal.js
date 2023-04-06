@@ -1,38 +1,39 @@
-let openModal = (modalName) => {
+let openModal = (projIndex) => {
+	let project = projectsData.projects[projIndex];
 
-  modalName.style.display = "block";
-}
+	$(".modal-title").html(project.name);
+	$('.carousel-item').remove();
+	
+	project.images.forEach((image, i) => {
+		let img = createElement({
+			type: "img", 
+			className: "img-fluid", 
+			innerHTML: null, 
+			src: image,
+		});
+		let caption = createElement({
+			type: "p", 
+			className: null, 
+			innerHTML: project.captions[i]
+		});
+		let captionDiv = createElement({
+			type: "div", 
+			className: "carousel-caption"
+		});
 
-let closeModal = (modalName) => {
-  modalName.style.display = "none";
-}
+		captionDiv.append(caption);
 
-let slideIndex = 1;
+		let carouselItemCls = (i===0)? "carousel-item active" : "carousel-item"
+		let carouselItem = createElement({
+			type: "div", 
+			className: carouselItemCls
+		});
 
-let plusSlides =(n, modalName) => {
-  showSlides(slideIndex += n, modalName);
-}
+		carouselItem.append(img, captionDiv);
 
-let currentSlide = (n, modalName) => {
-  showSlides(slideIndex = n, modalName);
-}
+		$(".carousel-inner").append(carouselItem);
+	});
 
-let showSlides = (n, modalName) => {
+	$("#projectModal").modal('show');
 
-  let i;
-  let slides = modalName.getElementsByClassName("mySlides");
-  let dots = modalName.getElementsByClassName("demo");
-  let captionText = modalName.getElementsByClassName("caption");
-
-  if (n > slides.length) {slideIndex = 1}
-  if (n < 1) {slideIndex = slides.length}
-  for (i = 0; i < slides.length; i++) {
-    slides[i].style.display = "none";
-  }
-  for (i = 0; i < dots.length; i++) {
-    dots[i].className = dots[i].className.replace(" active", "");
-  }
-  slides[slideIndex-1].style.display = "block";
-  dots[slideIndex-1].className += " active";
-  captionText.innerHTML = dots[slideIndex-1].alt;
-}
+};
