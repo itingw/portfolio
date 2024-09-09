@@ -1,16 +1,24 @@
 let experienceData = {
 	"experience": [{
-		"id": "osthus",
-		"title": "OSTHUS Services",
-		"subtitle": "UI/UX Engineer",
-		"duration": "2017 - Present",
+		"id": "pharmalex",
+		"title": "PharmaLex",
+		"subtitle": "Senior Specialist - Data and AI Solutions",
+		"duration": "2023 - Present",
 		"description": [
-			"Design workflows, prototypes, data visualizations, graphics and style standards for scientific informatics applications using A/B testing",
-			"Implement application features using CSS and JavaScript frameworks such as ExtJS and React in an Agile environment with international development teams",
-			"Develop and execute test plans to report defects and enhancements to ensure quality and usability of products within release cadences",
-			"Visualize technical and architectural concepts for marketing, sales and customer presentations",
-			"Coordinate with team members to compose instructional manuals, technical documentation and contractual materials",
-			"Track project burnup for consulting engagements, product development and team operations"
+			"Mockup and develop chemical catalog AI chatbot interface using Adobe XD and VueJS",
+			"Lead design reviews for prioritization of enhancements for an ontology search tool",
+			"Design and implement literature search application with multi-faceted filtering options, allowing users to find, save and annotate relevant articles",
+		]
+	}, {
+		"id": "osthus",
+		"title": "OSTHUS Inc.",
+		"subtitle": "UI/UX Engineer",
+		"duration": "2017 - 2023",
+		"description": [
+			"Collaborated with stakeholders to design workflows, prototypes, data visualizations, and graphics for scientific informatics search tools",
+			"Designed and implemented a CRUD application with audit history and entity merge conflict resolution using ReactJS and Material UI",
+			"Developed and executed test plans for search applications to report defects to ensure quality and usability for releases",
+			"Visualized technical and architectural concepts for marketing, sales and customer presentations",
 		]
 	}, {
 		"id": "udacity",
